@@ -8,6 +8,11 @@
 <body>
 <div class="container">
   <h2>Login</h2>
+  <?php if ($this->session->flashdata('error')): ?>
+    <div class="alert alert-danger">
+        <?php echo $this->session->flashdata('error'); ?>
+    </div>
+  <?php endif; ?>
   <form action="<?php echo site_url('login/authenticate'); ?>" method="post">
       <div class="form-group">
           <label for="username">Username:</label>
