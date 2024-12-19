@@ -50,12 +50,11 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 |		my-controller/my-method	-> my_controller/my_method
 */
 $route['default_controller'] = 'login';
-$route['login'] = 'login';
-$route['login/authenticate'] = 'login/authenticate';
+$route['login'] = 'login/index';
+$route['register'] = 'login/register';
 $route['contacts'] = 'contacts/index';
-$route['contacts/add_contact'] = 'contacts/add_contact';
+$route['contacts/add'] = 'contacts/add';
 $route['contacts/edit/(:num)'] = 'contacts/edit/$1';
-$route['register'] = 'register';
-$route['register/register_user'] = 'register/register_user';
+$route['contacts/delete/(:num)'] = 'contacts/delete/$1';
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;
