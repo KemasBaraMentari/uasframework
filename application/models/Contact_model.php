@@ -11,6 +11,10 @@ class Contact_model extends CI_Model {
         return $this->db->get_where('contacts', array('id' => $id))->row();
     }
 
+    public function add_contact($data) {
+        return $this->db->insert('contacts', $data);
+    }
+
     public function insert_contact($data) {
         $this->db->insert('contacts', $data);
     }

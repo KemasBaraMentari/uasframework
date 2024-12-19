@@ -14,12 +14,18 @@ class Contacts extends CI_Controller {
     }
 
     public function add_contact() {
-        $contact_data = array(
+        $data = [
             'no_telpon' => $this->input->post('no_telpon'),
             'no_ktp' => $this->input->post('no_ktp'),
             'nama' => $this->input->post('nama')
-        );
-        $this->Contact_model->insert_contact($contact_data);
+        ];
+    
+        if ($this->Contact_model->add_contact($data)) {
+            $this->session->set_flashdata('success', 'Contact added successfully');
+        } else {
+            $this->session->set_flashdata('error', 'Failed to add contact');
+        }
+    
         redirect('contacts');
     }
 
